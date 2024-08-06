@@ -2,29 +2,60 @@ const carrito = [];
 
 const productos = [
     {
-        id: "abrigo-01",
-        titulo: "Abrigo 01",
-        precio: 3000,
+        id: "1112",
+        titulo: "Zarcillos piedra roja 18k",
+        precio: 340,
         img: "./assets/images/01.webp",
     },
     {
-        id: "abrigo-02",
-        titulo: "Abrigo 02",
-        precio: 3000,
+        id: "1113",
+        titulo: "Zarcillos infitino 18k",
+        precio: 380,
         img: "./assets/images/02.webp",
     },
     {
-        id: "abrigo-03",
-        titulo: "Abrigo 03",
-        precio: 3000,
+        id: "1114",
+        titulo: "Zarcillo diamante 18k",
+        precio: 540,
         img: "./assets/images/03.webp",
     },
     {
-        id: "abrigo-04",
-        titulo: "Abrigo 04",
-        precio: 3000,
+        id: "1115",
+        titulo: "Zarcillo turmelina baño de oro",
+        precio: 280,
         img: "./assets/images/04.webp",
+    },
+    {
+        id: "1116",
+        titulo: "Zarcillo corazones 18k",
+        precio: 365,
+        img: "./assets/images/05.webp",
+    },
+    {
+        id: "1117",
+        titulo: "Zarcillo guindante 18k",
+        precio: 270,
+        img: "./assets/images/06.webp",
+    },
+    {
+        id: "1118",
+        titulo: "Cadena barbada 18k",
+        precio: 970,
+        img: "./assets/images/07.webp",
+    },
+    {
+        id: "1119",
+        titulo: "Dije divino niño 18k",
+        precio: 180,
+        img: "./assets/images/08.webp",
+    },
+    {
+        id: "1120",
+        titulo: "Cadena Maciza 14k",
+        precio: 1080,
+        img: "./assets/images/09.webp",
     }
+
 ];
 
 const divisa = '€';
@@ -40,6 +71,7 @@ productos.forEach((producto) => {
         <img class="producto-img" src="${producto.img}" alt="">
         <h3>${producto.titulo}</h3>
         <p>€${producto.precio}</p>
+        <p>SKU ${producto.id}</p>
     `;
 
     let button = document.createElement("button");
@@ -79,8 +111,9 @@ function actualizarCarrito() {
             let div = document.createElement("div");
             div.classList.add("carrito-producto");
             div.innerHTML = `
-                <img class="producto-img" src="${producto.img}" alt="${producto.titulo}" style="width: 50px; height: auto;">
+                 <img class="producto-img" src="${producto.img}" alt="${producto.titulo}" style="width: 50px; height: auto;">
                 <h3>${producto.titulo}</h3>
+                <p>${producto.id}</p>
                 <p>€${producto.precio} x ${cantidad}</p>
             `;
 
@@ -94,6 +127,13 @@ function actualizarCarrito() {
             div.append(button);
             carritoProductos.append(div);
         });
+
+        let button = document.createElement("button");
+        button.classList.add("btn-whatsapp");
+        button.innerText = 'Enviar por WhatsApp';
+        button.addEventListener('click', enviarPorWhatsApp);
+
+        carritoProductos.append(button);
     }
 
     actualizarTotal();
@@ -117,3 +157,22 @@ function actualizarTotal() {
     const total = carrito.reduce((acc, { producto, cantidad }) => acc + (producto.precio * cantidad), 0);
     carritoTotal.innerText = divisa + total;
 }
+
+
+function enviarPorWhatsApp() {
+    if (carrito.length === 0) return;
+ 
+    let mensaje = 'Contenido de mi pedido:\n\n';
+    let totalPedido = 0;
+ 
+    for (let { producto, cantidad } of carrito) {
+        mensaje += `${producto.titulo} codigo ${producto.id}: €${producto.precio} x ${cantidad} \n`;
+        totalPedido += producto.precio * cantidad;
+    }
+ 
+    mensaje += `\nTotal: ${divisa}${totalPedido}`;
+ 
+    const mensajeCodificado = encodeURIComponent(mensaje);
+    const urlWhatsApp = `https://api.whatsapp.com/send?text=${mensajeCodificado}`;
+    window.open(urlWhatsApp, '_blank');
+ }
