@@ -1,4 +1,4 @@
-const carrito = [];
+const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 const productos = [
     {
@@ -63,6 +63,8 @@ const contenedorProductos = document.querySelector("#productos");
 const carritoVacio = document.querySelector("#carrito-vacio");
 const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
+const vaciarCarrito = document.querySelector("#vaciar-carrito");
+const irAlCarrito = document.querySelector("#ir-al-carrito");
 
 productos.forEach((producto) => {
     let div = document.createElement("div");
@@ -95,15 +97,31 @@ const agregarAlCarrito = (producto) => {
     }
 
     actualizarCarrito();
+
+    Toastify({
+        text: producto.titulo + " agregado",
+        avatar: producto.img,
+        duration: 1500,
+        close: true,
+        className: "toast-agregar",
+        style: {
+          background: "var(--clr-secundary)",
+          color: "var(--clr-black)"
+        },
+      }).showToast();
 }
 
 function actualizarCarrito() {
     if (carrito.length === 0) {
         carritoVacio.classList.remove("d-none");
         carritoProductos.classList.add("d-none");
+        vaciarCarrito.classList.add("d-none");
+        irAlCarrito.classList.add("d-none");
     } else {
         carritoVacio.classList.add("d-none");
         carritoProductos.classList.remove("d-none");
+        vaciarCarrito.classList.remove("d-none");
+        irAlCarrito.classList.remove("d-none");
 
         carritoProductos.innerHTML = "";
 
@@ -137,7 +155,10 @@ function actualizarCarrito() {
     }
 
     actualizarTotal();
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 }
+actualizarCarrito();
 
 function borrarDelCarrito(producto) {
     const indice = carrito.findIndex(item => item.producto.id === producto.id);
@@ -176,3 +197,26 @@ function enviarPorWhatsApp() {
     const urlWhatsApp = `https://api.whatsapp.com/send?text=${mensajeCodificado}`;
     window.open(urlWhatsApp, '_blank');
  }
+
+ vaciarCarrito.addEventListener("click", () => {
+    const cantidadTotal = carrito.reduce((acc, prod) => acc + prod.cantidad, 0);
+    Swal.fire({
+        title: "¿Seguro querés vaciar el carrito?",
+        text: "Se van a borrar " + cantidadTotal + " productos.",
+        icon: "question",
+        showDenyButton: true,
+        denyButtonText: "No",
+        confirmButtonText: "Sí"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            carrito.length = 0;
+            actualizarCarrito();
+            Swal.fire({
+                icon: "success",
+                title: "Carrito vaciado",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        }
+      })
+})

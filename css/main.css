@@ -151,3 +151,38 @@ p{
     flex-direction: column;
     gap: .25rem;
 }
+
+#vaciar-carrito {
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+    border: none;
+    padding: .25rem 1rem;
+    border-radius: 1rem;
+    margin-block: 1rem;
+    cursor: pointer;
+}
+
+.toast-agregar {
+    display: flex;
+    align-items: center;
+}
+
+.pagina-carrito {
+    margin-top: 1rem;
+}
+
+.pagina-carrito-producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    background-color: #1c1c1c;
+    color: #f2ebd9;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+}
+
+.pagina-carrito-producto img {
+    width: 3rem;
+}
