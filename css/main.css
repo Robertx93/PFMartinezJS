@@ -42,6 +42,21 @@ p{
     background-color: black;
     color: var(--clr-white);
     padding-block: 1rem;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+.nav {
+    padding: 0px 20px;
+}
+.logo-carrito{
+    height: 35px;
+    width: 35px;
+}
+
+.logo-carrito:hover{
+    filter: drop-shadow(0 2px 5px rgba(255, 255, 255, 0.7));
 }
 
 .main {
@@ -150,6 +165,10 @@ p{
     display: flex;
     flex-direction: column;
     gap: .25rem;
+}
+
+.producto:hover {
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.281);
 }
 
 #vaciar-carrito {
