@@ -1,9 +1,11 @@
-Pre entrega 3 de Robert Martinez
+Proyecto final Joyeria Martinez
 
-En esta ocasion realice un pequeño ecomerce simulando una tienda de joyas, aplicando todo lo visto en clases y lo repasado en el ultimo after con el profesor, implementando algunas mejoras como lo es la posibilidad de enviar el carrito por whatsapp, asi como ver la cantidad agrupada por producto, pudiendo sumar o restar los mismos.
+En esta ocasion realice un pequeño ecomerce simulando una tienda de joyas con su carrito, funcionalidades como agregar productos al carrito, poder modificarlo al igual que obtener el monto total a pagar y poder vaciar el mismo, asi mismo recibir notificaciones al agregar productos al carrito, y poder obtener detalles de cada producto mediante una ventana emergente dentro de la misma pagina. aplicando todo lo visto en clase a lo largo del curso de Javascript. 
 
-Todo lo anterior aplicando los metodos de Objetos, Arrays, asi como los metodos de busqueda y filtrado sobre el array, de igual manera aplicando la metodologia DOM para mostrar o agregar elementos HTML desde Javascript.
+Todo lo anterior aplicando los metodos de Objetos, Arrays, metodos de busqueda y filtrado sobre el array, de igual manera aplicando la metodologia DOM para mostrar o agregar elementos HTML desde Javascript, uso de librerias (Toastify), base de datos JSON usando Fetch, Uso de almacenamiento Local Storage, y los distintos operadores Avanzados.
 
-Adicionalmente he añadido el uso de librerias para agregar la notificacion Toastify al agregar productos al carrito asi tambien como la alerta al borrar el carrito.
+Espero sea de su agrado y haber podido abarcar todo lo solicitado para esta entrega de proyecto final, estare agradecido de cualquier feetback y oportunidades de mejora. y una vez mas agradecerle por todo lo enseñado durante el curso, asi como a cada uno de los tutores por todos los aportes y estar presente en todas las clases participando de manera activa en cada una de ellas.
 
-mas adelante estare añadiendo un carrito flotante el cual esta en construccion.
+Saludos
+Robert Martinez
+

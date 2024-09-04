@@ -206,23 +206,23 @@ p{
 }
 
 .modal {
-    display: none; /* Ocultar por defecto */
-    position: fixed; /* Fijo en la pantalla */
-    z-index: 1; /* Por encima de otros elementos */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Alto completo */
-    overflow: auto; /* Habilitar desplazamiento si es necesario */
-    background-color: rgba(0,0,0,0.4); /* Fondo negro con opacidad */
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin:15% auto; /* Margen superior e inferior */
+    margin:15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 30%; /* Ancho del modal */
+    width: 30%; 
     text-align: center;
     align-items: center;
     align-content: center;
@@ -250,7 +250,7 @@ p{
 
 @media screen and (max-width: 768px) {
 .modal-content {
-        width: 80%; /* Ancho del modal */
+        width: 80%; 
     }
 
 .productos {

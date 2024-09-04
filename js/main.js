@@ -17,20 +17,19 @@ const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
 const irAlCarrito = document.querySelector("#ir-al-carrito");
-const botonMostrarMas = document.createElement("button"); // Crear el botón "Mostrar más"
+const botonMostrarMas = document.createElement("button");
 botonMostrarMas.innerText = "Mostrar más";
 botonMostrarMas.classList.add("producto-btn");
 
-document.querySelector("#contenedor-boton").append(botonMostrarMas); // Asegúrate de tener un contenedor para el botón
+document.querySelector("#contenedor-boton").append(botonMostrarMas);
 
 botonMostrarMas.addEventListener("click", () => {
-    const siguienteLote = productos.slice(cantidadMostrados, cantidadMostrados + 3); // Cargar los siguientes 9 productos
+    const siguienteLote = productos.slice(cantidadMostrados, cantidadMostrados + 3);
     mostrarProductos(siguienteLote);
-    cantidadMostrados += 3; // Aumentar la cantidad mostrada
+    cantidadMostrados += 3; 
 
-    // Si ya no hay más productos para mostrar, ocultar el botón
     if (cantidadMostrados >= productos.length) {
-        botonMostrarMas.style.display = "none"; // Ocultar el botón si no hay más productos
+        botonMostrarMas.style.display = "none"; 
     }
 });
 
@@ -52,39 +51,39 @@ function mostrarProductos(productosAmostrar) {
             agregarAlCarrito(producto);
         });
 
-        let buttonDetalles = document.createElement("button"); // Botón de detalles
+        let buttonDetalles = document.createElement("button"); 
         buttonDetalles.classList.add("producto-btn");
         buttonDetalles.innerText = "Detalles";
         buttonDetalles.addEventListener("click", () => {
-            mostrarDetalles(producto); // Llamar a la función para mostrar detalles
+            mostrarDetalles(producto); 
         });
 
         div.append(button);
-        div.append(buttonDetalles); // Agregar el botón de detalles al div del producto
+        div.append(buttonDetalles); 
         contenedorProductos.append(div);
     });
 }
 
 function mostrarDetalles(producto) {
-    // Llenar el contenido del modal con los detalles del producto
-    document.getElementById("modal-imagen").src = producto.img; // Mostrar la imagen en el modal
+    
+    document.getElementById("modal-imagen").src = producto.img; 
     document.getElementById("modal-titulo").innerText = producto.titulo;
     document.getElementById("modal-descripcion").innerText = producto.descripcion || 'Descripcion no disponible';
     document.getElementById("modal-precio").innerText = `Precio: €${producto.precio}`;
     document.getElementById("modal-sku").innerText = `SKU: ${producto.id}`;
 
-    // Mostrar el modal
+    
     const modal = document.getElementById("modal");
     modal.style.display = "block";
 
-    // Cerrar el modal cuando se hace clic en la "X"
+    
     const closeButton = document.querySelector(".close-button");
 
     closeButton.onclick = function() {
         modal.style.display = "none";
     }
 
-   // Cerrar el modal si se hace clic fuera del contenido del modal
+   
    window.onclick = function(event) {
        if (event.target === modal) {
            modal.style.display = "none";
