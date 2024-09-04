@@ -154,7 +154,7 @@ p{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
 }
 
 .producto {
@@ -204,4 +204,8 @@ p{
 
 .pagina-carrito-producto img {
     width: 3rem;
+}
+
+.mostrar-mas{
+    text-align: center;
 }

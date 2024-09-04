@@ -1,12 +1,13 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 let productos = [];
+let cantidadMostrados = 9;
 
 fetch("./js/productos.json")
     .then(response => response.json())
     .then(data => {
         productos = data;
-        mostrarProductos(productos);
+        mostrarProductos(productos.slice(0, cantidadMostrados));
     })
 
 const divisa = '€';
@@ -16,9 +17,25 @@ const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
 const irAlCarrito = document.querySelector("#ir-al-carrito");
+const botonMostrarMas = document.createElement("button"); // Crear el botón "Mostrar más"
+botonMostrarMas.innerText = "Mostrar más";
+botonMostrarMas.classList.add("producto-btn");
 
-function mostrarProductos() {
-    productos.forEach((producto) => {
+document.querySelector("#contenedor-boton").append(botonMostrarMas); // Asegúrate de tener un contenedor para el botón
+
+botonMostrarMas.addEventListener("click", () => {
+    const siguienteLote = productos.slice(cantidadMostrados, cantidadMostrados + 3); // Cargar los siguientes 9 productos
+    mostrarProductos(siguienteLote);
+    cantidadMostrados += 3; // Aumentar la cantidad mostrada
+
+    // Si ya no hay más productos para mostrar, ocultar el botón
+    if (cantidadMostrados >= productos.length) {
+        botonMostrarMas.style.display = "none"; // Ocultar el botón si no hay más productos
+    }
+});
+
+function mostrarProductos(productosAmostrar) {
+    productosAmostrar.forEach((producto) => {
         let div = document.createElement("div");
         div.classList.add("producto");
         div.innerHTML = `
@@ -28,16 +45,16 @@ function mostrarProductos() {
             <p>SKU ${producto.id}</p>
         `;
 
-    let button = document.createElement("button");
-    button.classList.add("producto-btn");
-    button.innerText = "Agregar al carrito";
-    button.addEventListener("click", () => {
-        agregarAlCarrito(producto);
-    });
+        let button = document.createElement("button");
+        button.classList.add("producto-btn");
+        button.innerText = "Agregar al carrito";
+        button.addEventListener("click", () => {
+            agregarAlCarrito(producto);
+        });
 
-    div.append(button);
-    contenedorProductos.append(div);
-});
+        div.append(button);
+        contenedorProductos.append(div);
+    });
 }
 
 const agregarAlCarrito = (producto) => {

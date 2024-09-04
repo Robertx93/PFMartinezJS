@@ -52,6 +52,48 @@
         "titulo": "Cadena Maciza 14k",
         "precio": 1080,
         "img": "./assets/images/09.webp"
+    },
+    {
+        "id": "1120",
+        "titulo": "Cadena Maciza 14k",
+        "precio": 1080,
+        "img": "./assets/images/09.webp"
+    },
+    {
+        "id": "1120",
+        "titulo": "Cadena Maciza 14k",
+        "precio": 1080,
+        "img": "./assets/images/09.webp"
+    },
+    {
+        "id": "1120",
+        "titulo": "Cadena Maciza 14k",
+        "precio": 1080,
+        "img": "./assets/images/09.webp"
+    },
+    {
+        "id": "1113",
+        "titulo": "Zarcillos infitino 18k",
+        "precio": 380,
+        "img": "./assets/images/02.webp"
+    },
+    {
+        "id": "1113",
+        "titulo": "Zarcillos infitino 18k",
+        "precio": 380,
+        "img": "./assets/images/02.webp"
+    },
+    {
+        "id": "1113",
+        "titulo": "Zarcillos infitino 18k",
+        "precio": 380,
+        "img": "./assets/images/02.webp"
+    },
+    {
+        "id": "1113",
+        "titulo": "Zarcillos infitino 18k",
+        "precio": 380,
+        "img": "./assets/images/02.webp"
     }
 
 ]
