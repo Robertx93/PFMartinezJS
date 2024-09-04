@@ -1,62 +1,13 @@
 const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
-const productos = [
-    {
-        id: "1112",
-        titulo: "Zarcillos piedra roja 18k",
-        precio: 340,
-        img: "./assets/images/01.webp",
-    },
-    {
-        id: "1113",
-        titulo: "Zarcillos infitino 18k",
-        precio: 380,
-        img: "./assets/images/02.webp",
-    },
-    {
-        id: "1114",
-        titulo: "Zarcillo diamante 18k",
-        precio: 540,
-        img: "./assets/images/03.webp",
-    },
-    {
-        id: "1115",
-        titulo: "Zarcillo turmelina baño de oro",
-        precio: 280,
-        img: "./assets/images/04.webp",
-    },
-    {
-        id: "1116",
-        titulo: "Zarcillo corazones 18k",
-        precio: 365,
-        img: "./assets/images/05.webp",
-    },
-    {
-        id: "1117",
-        titulo: "Zarcillo guindante 18k",
-        precio: 270,
-        img: "./assets/images/06.webp",
-    },
-    {
-        id: "1118",
-        titulo: "Cadena barbada 18k",
-        precio: 970,
-        img: "./assets/images/07.webp",
-    },
-    {
-        id: "1119",
-        titulo: "Dije divino niño 18k",
-        precio: 180,
-        img: "./assets/images/08.webp",
-    },
-    {
-        id: "1120",
-        titulo: "Cadena Maciza 14k",
-        precio: 1080,
-        img: "./assets/images/09.webp",
-    }
+let productos = [];
 
-];
+fetch("./js/productos.json")
+    .then(response => response.json())
+    .then(data => {
+        productos = data;
+        mostrarProductos(productos);
+    })
 
 const divisa = '€';
 const contenedorProductos = document.querySelector("#productos");
@@ -66,15 +17,16 @@ const carritoTotal = document.querySelector("#carrito-total");
 const vaciarCarrito = document.querySelector("#vaciar-carrito");
 const irAlCarrito = document.querySelector("#ir-al-carrito");
 
-productos.forEach((producto) => {
-    let div = document.createElement("div");
-    div.classList.add("producto");
-    div.innerHTML = `
-        <img class="producto-img" src="${producto.img}" alt="">
-        <h3>${producto.titulo}</h3>
-        <p>€${producto.precio}</p>
-        <p>SKU ${producto.id}</p>
-    `;
+function mostrarProductos() {
+    productos.forEach((producto) => {
+        let div = document.createElement("div");
+        div.classList.add("producto");
+        div.innerHTML = `
+            <img class="producto-img" src="${producto.img}" alt="">
+            <h3>${producto.titulo}</h3>
+            <p>€${producto.precio}</p>
+            <p>SKU ${producto.id}</p>
+        `;
 
     let button = document.createElement("button");
     button.classList.add("producto-btn");
@@ -86,6 +38,7 @@ productos.forEach((producto) => {
     div.append(button);
     contenedorProductos.append(div);
 });
+}
 
 const agregarAlCarrito = (producto) => {
     const indice = carrito.findIndex(item => item.producto.id === producto.id);
