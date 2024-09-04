@@ -1,100 +1,129 @@
 [
     {
         "id": "1112",
-        "titulo": "Zarcillos piedra roja 18k",
+        "titulo": "Zarcillos piedra 18k",
         "precio": 340,
         "img": "./assets/images/01.webp",
-        "descripcion": "zarcillos hechos de oro 18 quilates, con una piedra preciosa roja"
+        "descripcion": "zarcillos hechos de oro 18k, con una piedra preciosa roja"
     },
     {
         "id": "1113",
         "titulo": "Zarcillos infitino 18k",
         "precio": 380,
-        "img": "./assets/images/02.webp"
+        "img": "./assets/images/02.webp",
+        "descripcion": "zarcillos de simbolo de infinito hechos de oro 18k, con incrustaciones de piedras preciosas"
     },
     {
         "id": "1114",
-        "titulo": "Zarcillo diamante 18k",
+        "titulo": "Zarcillos diamante 18k",
         "precio": 540,
-        "img": "./assets/images/03.webp"
+        "img": "./assets/images/03.webp",
+        "descripcion": "zarcillos hechos de oro 18k, con una pequeña piedra de diamante en su punta"
     },
     {
         "id": "1115",
-        "titulo": "Zarcillo turmelina baño de oro",
+        "titulo": "Zarcillos turmalina",
         "precio": 280,
-        "img": "./assets/images/04.webp"
+        "img": "./assets/images/04.webp",
+        "descripcion": "zarcillos bañados en oro, con piedras turmalinas rosa"
     },
     {
         "id": "1116",
-        "titulo": "Zarcillo corazones 18k",
+        "titulo": "Zarcillos 18k",
         "precio": 365,
-        "img": "./assets/images/05.webp"
+        "img": "./assets/images/05.webp",
+        "descripcion": "zarcillos de forma de corazon hechos de oro 18k"
     },
     {
         "id": "1117",
-        "titulo": "Zarcillo guindante 18k",
+        "titulo": "Zarcillos 18k",
         "precio": 270,
-        "img": "./assets/images/06.webp"
+        "img": "./assets/images/06.webp",
+        "descripcion": "zarcillos hechos de oro 18k"
     },
     {
         "id": "1118",
-        "titulo": "Cadena barbada 18k",
+        "titulo": "Cadena barbada",
         "precio": 970,
-        "img": "./assets/images/07.webp"
+        "img": "./assets/images/07.webp",
+        "descripcion": "cadena de oro 18k, modelo barbada de longuitud 40 cm"
     },
     {
         "id": "1119",
-        "titulo": "Dije divino niño 18k",
+        "titulo": "Dije 18k",
         "precio": 180,
-        "img": "./assets/images/08.webp"
+        "img": "./assets/images/08.webp",
+        "descripcion": "precioso dije del divino niño, chapado en plata 925 y bañado en oro 18k"
     },
     {
         "id": "1120",
-        "titulo": "Cadena Maciza 14k",
+        "titulo": "Cadena Maciza",
         "precio": 1080,
-        "img": "./assets/images/09.webp"
+        "img": "./assets/images/09.webp",
+        "descripcion": "cadena maciza de oro 14k, longuitud de 40 cm "
     },
     {
-        "id": "1120",
-        "titulo": "Cadena Maciza 14k",
-        "precio": 1080,
-        "img": "./assets/images/09.webp"
+        "id": "1121",
+        "titulo": "Anillo Rose",
+        "precio": 1190,
+        "img": "./assets/images/10.webp",
+        "descripcion": "Anillo de compromiso elaborado de oro rosa 18k, con diamante de forma de corazon"
     },
     {
-        "id": "1120",
-        "titulo": "Cadena Maciza 14k",
-        "precio": 1080,
-        "img": "./assets/images/09.webp"
+        "id": "1122",
+        "titulo": "Anillo blanco",
+        "precio": 1700,
+        "img": "./assets/images/11.webp",
+        "descripcion": "Anillo de compromiso modelo Brigitte elaborado en oro blanco 18k y diamante 0.55CT"
     },
     {
-        "id": "1120",
-        "titulo": "Cadena Maciza 14k",
-        "precio": 1080,
-        "img": "./assets/images/09.webp"
+        "id": "1123",
+        "titulo": "Anillo Gold",
+        "precio": 1680,
+        "img": "./assets/images/12.webp",
+        "descripcion": "Anillo Geraldine elaborado en oro dorado 18k con diamante 0.55CT"
     },
     {
-        "id": "1113",
-        "titulo": "Zarcillos infitino 18k",
-        "precio": 380,
-        "img": "./assets/images/02.webp"
+        "id": "1124",
+        "titulo": "Anillo 14k",
+        "precio": 970,
+        "img": "./assets/images/13.webp",
+        "descripcion": "Anillo de compromiso elaborado en oro 14k, con brillantes"
     },
     {
-        "id": "1113",
-        "titulo": "Zarcillos infitino 18k",
-        "precio": 380,
-        "img": "./assets/images/02.webp"
+        "id": "1125",
+        "titulo": "Anillo 14k",
+        "precio": 790,
+        "img": "./assets/images/14.webp",
+        "descripcion": "Anillo de compromiso elaborado en oro 14k modelo infinite, con brillantes"
     },
     {
-        "id": "1113",
-        "titulo": "Zarcillos infitino 18k",
-        "precio": 380,
-        "img": "./assets/images/02.webp"
+        "id": "1126",
+        "titulo": "Anillo Gold",
+        "precio": 2235,
+        "img": "./assets/images/15.webp",
+        "descripcion": "Anillo de compromiso de oro dorado 18k y diamantes 0.10CT y 0.55CT"
     },
     {
-        "id": "1113",
-        "titulo": "Zarcillos infitino 18k",
-        "precio": 380,
-        "img": "./assets/images/02.webp"
+        "id": "1127",
+        "titulo": "Anillo Union",
+        "precio": 2780,
+        "img": "./assets/images/16.webp",
+        "descripcion": "Anillos de matrimonio elaborados en oro rosa y dorado 18k y incrustaciones de diamantes"
+    },
+    {
+        "id": "1128",
+        "titulo": "Anillo Rose 18",
+        "precio": 1560,
+        "img": "./assets/images/17.webp",
+        "descripcion": "Anillo de compromiso, elaborado en oro rosa de 18k y diamante sutil"
+    },
+    {
+        "id": "1129",
+        "titulo": "Anillo infinito 18",
+        "precio": 1680,
+        "img": "./assets/images/18.webp",
+        "descripcion": "Anillo de compromiso elaborado en oro blanco 18k, y diamante 0.55CT"
     }
 
 ]
