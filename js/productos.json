@@ -3,7 +3,8 @@
         "id": "1112",
         "titulo": "Zarcillos piedra roja 18k",
         "precio": 340,
-        "img": "./assets/images/01.webp"
+        "img": "./assets/images/01.webp",
+        "descripcion": "zarcillos hechos de oro 18 quilates, con una piedra preciosa roja"
     },
     {
         "id": "1113",

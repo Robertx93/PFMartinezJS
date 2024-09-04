@@ -52,9 +52,44 @@ function mostrarProductos(productosAmostrar) {
             agregarAlCarrito(producto);
         });
 
+        let buttonDetalles = document.createElement("button"); // Botón de detalles
+        buttonDetalles.classList.add("producto-btn");
+        buttonDetalles.innerText = "Detalles";
+        buttonDetalles.addEventListener("click", () => {
+            mostrarDetalles(producto); // Llamar a la función para mostrar detalles
+        });
+
         div.append(button);
+        div.append(buttonDetalles); // Agregar el botón de detalles al div del producto
         contenedorProductos.append(div);
     });
+}
+
+function mostrarDetalles(producto) {
+    // Llenar el contenido del modal con los detalles del producto
+    document.getElementById("modal-imagen").src = producto.img; // Mostrar la imagen en el modal
+    document.getElementById("modal-titulo").innerText = producto.titulo;
+    document.getElementById("modal-descripcion").innerText = producto.descripcion || 'Descripcion no disponible';
+    document.getElementById("modal-precio").innerText = `Precio: €${producto.precio}`;
+    document.getElementById("modal-sku").innerText = `SKU: ${producto.id}`;
+
+    // Mostrar el modal
+    const modal = document.getElementById("modal");
+    modal.style.display = "block";
+
+    // Cerrar el modal cuando se hace clic en la "X"
+    const closeButton = document.querySelector(".close-button");
+
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    }
+
+   // Cerrar el modal si se hace clic fuera del contenido del modal
+   window.onclick = function(event) {
+       if (event.target === modal) {
+           modal.style.display = "none";
+       }
+   }
 }
 
 const agregarAlCarrito = (producto) => {
